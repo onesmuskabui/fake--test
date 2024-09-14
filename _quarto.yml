@@ -1,0 +1,32 @@
+profile:
+  default: development
+project:
+  type: website
+  render:
+    - "**/*.qmd"
+    - "!**/*.md"
+    - CNAME
+  pre-render:
+  - ./pre-render.py
+  post-render:
+    - ./post-render.py
+website:
+  page-footer:
+    border: true
+    background: dark
+    center: 
+      - text: "<b>Download PDF</b>"
+        href: /index.pdf
+format-links: false
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+  pdf: default
+resources:
+  - CNAME
+
+
+
